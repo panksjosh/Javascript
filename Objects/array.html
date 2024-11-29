@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array</title>
+</head>
+
+<body>
+
+  <script>
+
+    // let arr = [10, 5, 8, 9]
+    // console.log(arr);
+    // console.log(typeof arr);
+
+
+
+    // let copyArrr = arr;
+    // console.log(copyArrr);
+
+
+
+    // let [a, b, c] = copyArrr;
+    // console.log(a, b, c);
+
+    // copyArrr.push(5, 6, 9);
+    // console.log(copyArrr);
+
+    // copyArrr.pop();
+    // console.log(copyArrr);
+
+    // copyArrr.shift();
+    // console.log(copyArrr);
+
+    // copyArrr.unshift(12);
+    // console.log(copyArrr);
+
+
+    // for (num = 0; num < arr.length; num++) {
+    //   console.log(arr[num]);
+    // }
+
+
+    let numArray = [5, 6, 14, 8, 9, 7];
+
+    // console.log(numArray.unshift(4));
+    // console.log(numArray.push(7));
+    // console.log(numArray);
+
+
+    function findElement(element) {
+      for (i = 0; i < numArray.length; i++) {
+        if (numArray[i] == element) {
+          console.log(i);
+        }
+      }
+
+    }
+    findElement(14);
+
+    let arr2 = numArray.slice();
+
+    console.log(arr2);
+
+
+
+    let init = 0;
+
+    while (init < 20) {
+      if (init % 2 == 0) {
+        console.log(`${init}`);
+      }
+      init++;
+    }
+
+    for (i = 0; i <= 10; i++) {
+      console.log(i);
+    }
+
+    let iArr = [];
+    console.log(iArr);
+
+    iArr.push(i);
+    console.log(iArr);
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

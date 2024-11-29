@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date</title>
+</head>
+
+<body>
+
+  <div id="Greeting"></div>
+  <br>
+  <button id="myButton" onclick="myButtonClick();">Clicked 0</button>
+
+
+  <script>
+    let myDate = new Date();
+
+    //console.log(myDate);
+
+    let currentHour = myDate.getHours();
+
+    function displayGreetings(time) {
+      if (time <= 12) {
+        return "Good Morning";
+
+      } else if (time >= 13 || time <= 18) {
+        return "Good Afternoon";
+      } else if (time >= 19 || time <= 24) {
+        return "Good Night";
+      }
+    }
+
+    let greetings = displayGreetings(currentHour);
+
+    document.querySelector("#Greeting").innerHTML = `Hello Pankaj ${greetings}`;
+
+
+
+
+    let buttonCount = localStorage.getItem('buttonCount') || 0;
+    document.querySelector("#myButton").innerHTML = `Clicked ${buttonCount}`;
+
+    function myButtonClick() {
+      buttonCount++;
+      localStorage.setItem('buttonCount', buttonCount);
+
+      document.querySelector("#myButton").innerHTML = `Clicked ${buttonCount}`;
+
+      if (buttonCount % 2 == 0) {
+        document.querySelector("#myButton").style.backgroundColor = 'red';
+      } else {
+        document.querySelector("#myButton").style.backgroundColor = 'green';
+      }
+    }
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

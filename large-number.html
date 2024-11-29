@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Large Numbers</title>
+</head>
+
+<body>
+
+  <p id="largeNumber"></p>
+
+  <script>
+
+    let a = 25;
+    let b = 17;
+
+    function findLargeNumber(a, b) {
+      if (a > b) {
+        return 'A is Large Number';
+      } else {
+        return 'B is Large Number'
+      }
+    }
+
+    let largeNumberValue = findLargeNumber(a, b);
+
+    document.querySelector('#largeNumber').innerHTML = largeNumberValue;
+
+
+  </script>
+
+</body>
+
+</html>

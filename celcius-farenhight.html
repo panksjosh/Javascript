@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convert Celsius to Farenheight</title>
+</head>
+
+<body>
+
+  <p id="Celsius"></p>
+
+  <script>
+
+    function celsiusToFarenheight(celsius) {
+      let farenHeight;
+      return farenHeight = (9 / 5) * celsius + 32;
+    }
+
+    let farenHeightValue = celsiusToFarenheight(5);
+
+    document.querySelector('#Celsius').innerHTML = farenHeightValue;
+
+
+  </script>
+
+
+</body>
+
+</html>

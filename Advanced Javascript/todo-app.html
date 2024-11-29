@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ToDo App</title>
+</head>
+
+
+
+<input type="text" id="inputElement" />
+<input type="date" id="dateElement" />
+<button onclick="addTodo();">Add</button>
+
+<div id="todoList">
+
+</div>
+
+<script>
+
+  let todoListItems = [
+    {
+      item: 'Buy Milk',
+      dueDate: '02/10/2024',
+    },
+    {
+      item: 'Buy Vegetables',
+      dueDate: '05/10/2024',
+    },
+
+  ];
+  displayTodoList();
+
+  function addTodo() {
+    let inputValue = document.querySelector('#inputElement').value;
+    let dateValue = document.querySelector('#dateElement').value;
+    //console.log(inputValue);
+
+    todoListItems.push({ item: inputValue, dueDate: dateValue });
+    //console.log(todoList);
+
+    displayTodoList();
+
+    document.querySelector('#inputElement').value = '';
+    document.querySelector('#dateElement').value = '';
+
+  }
+
+  function displayTodoList() {
+
+    let displayItems = document.querySelector('#todoList');
+
+
+    let newHTML = '';
+
+    for (i = 0; i < todoListItems.length; i++) {
+
+      let { item, dueDate } = todoListItems[i];
+
+      newHTML += `<div><span>${item} - ${dueDate}</span> <button onClick="todoListItems.splice(${i},1); displayTodoList();">Delete</button></div>`;
+
+    }
+
+    displayItems.innerHTML = newHTML;
+
+
+  }
+
+
+
+</script>
+
+</body>
+
+</html>

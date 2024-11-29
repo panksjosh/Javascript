@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+
+<body>
+
+  <script>
+    let product = {
+      company: "HP",
+      productName: "Printer",
+      price: 5000,
+      ratings: {
+        star: 4.5,
+        reviews: 5
+      },
+      displatPrice: function () {
+        console.log(`Product price is ${this.price}`);
+      }
+    }
+
+    console.log(typeof product);
+    console.log(product.company);
+
+    product.company = "Apple";
+    console.log(product);
+
+    product.displatPrice();
+
+    let MyntraProduct = {
+      productType: 'Men',
+      productName: 'Jeans',
+      productCompany: 'Allen Solly',
+      productPrice: '899',
+      deliveryTime: '2 days',
+      message: 'Good Job',
+      status: 'complete',
+
+    }
+
+    let objecrRef1 = MyntraProduct;
+    console.log(objecrRef1);
+
+    objecrRef1.productCompany = 'Tommy Hillfigure';
+    console.log(objecrRef1);
+
+    let objecrRef2 = objecrRef1;
+    console.log(objecrRef2);
+
+    console.log(`Bracket Notation Example: ${MyntraProduct['deliveryTime']}`);
+
+    let { message, status } = MyntraProduct;
+    console.log(`message: ${message}, status: ${status}`);
+
+
+    let MyntraProduct1 = {
+      productType: 'Men',
+      productName: 'Jeans',
+      productCompany: 'Allen Solly',
+      productPrice: '899',
+      deliveryTime: '2 days',
+      message: 'Good Job',
+      status: 'complete',
+
+    }
+    console.log(MyntraProduct1);
+
+
+    function isIdenticalProduct(prod1, prod2) {
+
+
+      if (typeof prod1 === 'object' && typeof prod2 === 'object') {
+        return true;
+      }
+
+      if (prod1 == prod2) {
+        return true;
+      }
+
+
+
+    }
+
+
+    console.log(isIdenticalProduct(MyntraProduct, MyntraProduct));
+
+    console.log(isIdenticalProduct(MyntraProduct, MyntraProduct1));
+
+
+    let productNew = {
+      name: 'Tshirt',
+      price: 899,
+    }
+
+    localStorage.setItem(product, JSON.stringify(productNew));
+
+    console.log(JSON.parse(localStorage.getItem(productNew)));
+
+
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+
+</html>
